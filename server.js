@@ -25,10 +25,20 @@ const paperRoutes = require('./Routes/papers');
 const app = express();
 
 // Middleware
+// app.use(cors({
+//     origin: ['http://localhost:3000', 'http://127.0.0.1:5500', 'http://localhost:5500'],
+//     credentials: true
+// }));
 app.use(cors({
-    origin: ['http://localhost:3000', 'http://127.0.0.1:5500', 'http://localhost:5500'],
+    origin: [
+        'http://127.0.0.1:5500',
+        'http://localhost:3000',
+        'http://localhost:5500',
+        'https://legendary-seahorse-e38275.netlify.app'  // ✅ Netlify URL
+    ],
     credentials: true
 }));
+
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
