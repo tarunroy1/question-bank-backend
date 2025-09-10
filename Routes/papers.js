@@ -157,7 +157,7 @@
 const express = require('express');
 const multer = require('multer');
 const mongoose = require('mongoose');
-const Paper = require('../models/Paper');
+const Paper = require('../models/papers');
 const auth = require('../middleware/auth');
 
 const router = express.Router();
